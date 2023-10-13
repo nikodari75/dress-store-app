@@ -10,7 +10,13 @@ app.use(express.json())
 app.use(cors())
 
 
-mongoose.connect("mongodb://127.0.0.1:27017/DressStore")
+
+const dbUserName = "nikodari"
+const dbPassword = "GCf6SoR0gRS5Uwuk"
+
+const dbString = `mongodb+srv://${dbUserName}:${dbPassword}@dressstore.ipjhfjz.mongodb.net/?retryWrites=true&w=majority`
+
+mongoose.connect(dbString)
     .then(result => {
         console.log("Connection Success ! ")
     })
